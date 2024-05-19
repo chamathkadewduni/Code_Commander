@@ -1,0 +1,189 @@
+CREATE TABLE city(
+	id INT NOT NULL AUTO_INCREMENT,
+	city VARCHAR(255),
+	District VARCHAR(50),
+	PRIMARY KEY (id)
+);
+
+/*All users irrespective of their role*/
+CREATE TABLE users(
+id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(10),
+    fname VARCHAR(255),
+    lname VARCHAR(255),
+    email VARCHAR(255) UNIQUE,
+    city_id INT,
+    phone VARCHAR(255),
+    dob DATE,
+    approve_status VARCHAR(255),
+    PRIMARY KEY (id),
+FOREIGN KEY (city_id) REFERENCES city(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+/* Interests master */
+CREATE TABLE interests(
+	id INT NOT NULL AUTO_INCREMENT,
+    interest VARCHAR(255),
+    PRIMARY KEY (id)
+);
+
+/*Top 5 Interests of a user*/
+CREATE TABLE user_interests(
+    user_id INT,
+    interest_id INT,
+FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE,
+FOREIGN KEY (interest_id) REFERENCES interests(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+/*Role master*/
+CREATE TABLE role(
+	id INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(255),
+	description VARCHAR(255),
+	status INT,
+	PRIMARY KEY (id)
+);
+
+/*user credentials for their role*/
+CREATE TABLE user_login(
+	id INT NOT NULL AUTO_INCREMENT,
+	user_id INT,
+	password VARCHAR(255),
+	status VARCHAR(255),
+	role_id INT,
+	PRIMARY KEY (id),
+FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE,
+FOREIGN KEY (role_id) REFERENCES role(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+/* institute master including schools */
+CREATE TABLE institute (
+    id INT NOT NULL AUTO_INCREMENT,
+    institute_name VARCHAR(255) NOT NULL,
+    city_id INT,
+    PRIMARY KEY (id),
+FOREIGN KEY (city_id) REFERENCES city(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+/* course master including GCE */
+CREATE TABLE course (
+    id INT NOT NULL AUTO_INCREMENT,
+    course_name VARCHAR(255) NOT NULL,
+    duration VARCHAR(255),
+    PRIMARY KEY (id)
+);
+
+/* Education of a Student */
+CREATE TABLE student_education (
+    user_id INT,
+    institute_id INT,
+	grade INT,
+	medium VARCHAR(10),
+FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE,
+FOREIGN KEY (institute_id) REFERENCES institute(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+/*Bridge institutes and courses - NO NEED */
+CREATE TABLE institute_courses (
+    institute_id INT,
+	course_id INT,
+FOREIGN KEY (institute_id) REFERENCES institute(id) ON UPDATE CASCADE ON DELETE CASCADE,
+FOREIGN KEY (course_id) REFERENCES course(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+/* qualifications of a Tutor */
+CREATE TABLE tutor_education (
+	id INT NOT NULL AUTO_INCREMENT,
+    user_id INT,
+    institute_id INT,
+	course_id INT,
+	status VARCHAR(20), /* following, completed, reading, dropped */
+	PRIMARY KEY (id),
+FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE,
+FOREIGN KEY (institute_id) REFERENCES institute(id) ON UPDATE CASCADE ON DELETE CASCADE,
+FOREIGN KEY (course_id) REFERENCES course(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+/* Workplace master */
+CREATE TABLE workplaces (
+	id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    city_id INT,
+	PRIMARY KEY (id),
+	FOREIGN KEY (city_id) REFERENCES city(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+/* work experience of a Tutor*/
+CREATE TABLE tutor_experience (
+    user_id INT,
+    workplace_id INT,
+    designation VARCHAR(255) NOT NULL,
+    year_started VARCHAR(4) NOT NULL,
+    year_ended VARCHAR(4) NOT NULL,
+FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE,
+FOREIGN KEY (workplace_id) REFERENCES workplaces(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+/* Credits user get */
+CREATE TABLE credits (
+	id INT NOT NULL AUTO_INCREMENT,
+    user_id INT,
+    credits_received INT,
+	received_on DATETIME,
+	reason VARCHAR(255), /* Registration, Rating, Paid */
+	PRIMARY KEY(id),
+FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+/* Ratings user get */
+CREATE TABLE ratings (
+	id INT NOT NULL AUTO_INCREMENT,
+    user_id INT,
+    ratings_received INT, /* 1 to 5 */
+	given_by INT,
+	received_on DATETIME,
+	comments VARCHAR(255),
+	PRIMARY KEY(id),
+FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE,
+FOREIGN KEY (given_by) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+/* Credits because of ratings */
+CREATE TABLE credits_ratings (
+    credit_id INT,
+    rating_id INT,
+FOREIGN KEY (credit_id) REFERENCES credits(id) ON UPDATE CASCADE ON DELETE CASCADE,
+FOREIGN KEY (rating_id) REFERENCES ratings(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE tutor_ad(
+	id INT NOT NULL AUTO_INCREMENT,
+	user_id INT,
+	topic VARCHAR(255),
+	description VARCHAR(255),
+	city_id INT,
+	medium VARCHAR(10),
+	type VARCHAR(20), /* Online, Individual, Group */
+	rate INT,
+	rateType VARCHAR(10), /* Hour, Month */	
+	status VARCHAR(255), /* Show, Hide */
+	PRIMARY KEY (id),
+	FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY (city_id) REFERENCES city(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE student_ad(
+	id INT NOT NULL AUTO_INCREMENT,
+	user_id INT,
+	topic VARCHAR(255),
+	description VARCHAR(255),
+	city_id INT,
+	medium VARCHAR(10),
+	type VARCHAR(20), /* Online, Individual, Group */	
+	status VARCHAR(255), /* Show, Hide */
+	PRIMARY KEY (id),
+	FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY (city_id) REFERENCES city(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+
