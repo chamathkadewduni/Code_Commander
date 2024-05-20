@@ -1,0 +1,59 @@
+/* Tailwind CSS can be used in place of Bootstrap. Below is a Tailwind CSS equivalent styling */
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    background-color: #f8fafc; /* Light gray background */
+    padding: 20px;
+}
+
+.container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff; /* White background for the container */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
+}
+
+h2 {
+    font-size: 1.75rem; /* Tailwind class: text-xl */
+    margin-bottom: 1rem; /* Tailwind class: mb-4 */
+    margin-top: 1rem; /* Tailwind class: mt-4 */
+    color: #2d3748; /* Dark gray text color */
+}
+
+label {
+    font-size: 1rem; /* Tailwind class: text-base */
+    color: #4a5568; /* Medium gray text color */
+}
+
+input[type="file"] {
+    margin-top: 0.5rem; /* Tailwind class: mt-2 */
+    border: 1px solid #cbd5e0; /* Light gray border */
+    border-radius: 4px; /* Tailwind class: rounded */
+    padding: 0.5rem; /* Tailwind class: p-2 */
+}
+
+.btn-primary {
+    background-color: #3182ce; /* Blue background color */
+    color: #ffffff; /* White text color */
+    padding: 0.5rem 1rem; /* Tailwind class: px-4 py-2 */
+    border-radius: 4px; /* Tailwind class: rounded */
+    font-size: 1rem; /* Tailwind class: text-base */
+}
+
+.btn-primary:hover {
+    background-color: #2b6cb0; /* Darker blue on hover */
+}
+
+.error {
+    color: #e53e3e; /* Red text color */
+    font-size: 1rem; /* Tailwind class: text-base */
+    margin-top: 0.5rem; /* Tailwind class: mt-2 */
+}
+
+.text-success {
+    color: #48bb78; /* Green text color */
+    font-size: 1rem; /* Tailwind class: text-base */
+    margin-top: 0.5rem; /* Tailwind class: mt-2 */
+}

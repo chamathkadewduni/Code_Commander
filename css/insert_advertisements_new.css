@@ -1,0 +1,156 @@
+/* Styles for the container */
+.searchResults div {
+    color: black;
+}
+
+body {
+    background-image: url('../image/photo-1497633762265-9d179a990aa6.avif'); 
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif; 
+    margin: 40px;
+    padding: 40px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    background: #00000030;
+    border: 2px solid rgba(255, 255, 255, .4);
+    backdrop-filter: blur(9px);
+    color: #fff;
+}
+
+/* Styles for form headings */
+h2 {
+    color: white;
+    text-align: center;
+    font-family: cursive;
+    text-shadow: 1px 1px 2px black;
+}
+
+/* Styles for form labels */
+label {
+    font-weight: normal;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+/* Styles for form inputs */
+.form-control {
+    width: 100%;
+    padding: 8px;
+    /*margin-bottom: 15px;*/
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Styles for error messages */
+.error {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+/* Styles for buttons */
+.btn {
+    margin-top: 15px;
+    margin-right: 20px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer; 
+    
+}
+
+.btn:hover{
+    background-color: #9BA69B;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border: 1px;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    border: 1px;
+}
+
+/* Styles for form layout */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Styles for radio buttons */
+.form-control-radio {
+    margin-right: 5px;
+    display: inline-block;
+    accent-color:#0079ff;
+}
+
+/* Styles for textarea */
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Styles for select dropdown */
+select.form-control {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path d='M 2 10 L 15 22 L 28 10'></path></svg>");
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 10px);
+    background-position-y: center;
+}
+
+/* Styles for select dropdown arrow */
+select.form-control {
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
+
+    /* Add custom arrow */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23000"><path d="M7 10l5 5 5-5H7z"/></svg>'); 
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 12px; 
+    padding-right: 20px; 
+}
+
+
+/* Styles for form submit button */
+button[type="submit"] {
+    background-color: green;
+    color: #fff;
+    border: none;
+}
+
+/* Styles for form clear button */
+button[name="clearBtn"] {
+    background-color: rgba(255,0,10,0.8);
+    color: #fff;
+    border: none;
+}

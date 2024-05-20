@@ -1,0 +1,50 @@
+/* Tailwind CSS can be used in place of Bootstrap. Below is a Tailwind CSS equivalent styling */
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    background-color: #f8fafc; /* Light gray background */
+    padding: 20px;
+}
+
+.container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff; /* White background for the container */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+h2 {
+    font-size: 1.75rem; /* Tailwind class: text-xl */
+    margin-bottom: 1rem; /* Tailwind class: mb-4 */
+    margin-top: 1rem; /* Tailwind class: mt-4 */
+    color: #2d3748; /* Dark gray text color */
+}
+
+.form-group input[type="text"] {
+    border: 1px solid #cbd5e0; /* Light gray border */
+    border-radius: 4px; /* Tailwind class: rounded */
+    padding: 0.5rem; /* Tailwind class: p-2 */
+    font-size: 1rem; /* Tailwind class: text-base */
+}
+
+.btn-primary {
+    background-color: #3182ce; /* Blue background color */
+    color: #ffffff; /* White text color */
+    padding: 0.5rem 1rem; /* Tailwind class: px-4 py-2 */
+    border-radius: 4px; /* Tailwind class: rounded */
+    font-size: 1rem; /* Tailwind class: text-base */
+}
+
+.btn-primary:hover {
+    background-color: #2b6cb0; /* Darker blue on hover */
+}
+
+#searchResults {
+    margin-top: 1rem; /* Tailwind class: mt-4 */
+    padding: 1rem; /* Tailwind class: p-4 */
+    background-color: #edf2f7; /* Light gray background for results */
+    border-radius: 4px; /* Tailwind class: rounded */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}

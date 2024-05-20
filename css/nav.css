@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: #0B4C97;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+th{
+    color:#76a6f5;
+}
+nav {
+  /*background: #222222;*/
+  padding: 5px 20px; /* Adjusted padding */
+  /*border: 1px solid #000;*/
+  border-left: none;
+  border-right: none;
+  z-index: 999;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul li.logo {
+  flex: 1;
+  font-size: 20px; /* Reduced font size */
+  font-weight: 700;
+}
+
+nav ul div.items {
+  padding: 0 10px; /* Adjusted padding */
+  display: inline-flex;
+}
+
+nav ul div.items a {
+  text-decoration: none;
+  font-size: 14px; /* Reduced font size */
+}
+
+nav ul div.items a:hover {
+  color: cyan;
+}
+
+nav ul .search-icon {
+  height: 30px; /* Reduced height */
+}
+
+nav ul .search-icon input {
+  height: 100%;
+}
+
+nav ul .search-icon .icon {
+  height: 100%;
+}
+
+nav ul .search-icon .icon span {
+    font-size:16px; /* Adjusted font size */
+}
+
+nav ul li.btn {
+    font-size:24px; /* Reduced font size */
+    flex:1;
+    padding:0; /* Adjusted padding */
+    display:none;
+}
+
+nav ul li.btn span {
+    height:32px; /* Reduced height */
+    width:32px; /* Reduced width */
+    line-height:32px; /* Adjusted line-height */
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 15px;
+}
+
+header .navbar {
+  max-width: 98%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo{
+    margin: auto;
+    width: 100%;
+    /*border: 3px solid #73AD21;*/
+    padding: 10px;
+}
+.logo img{
+    width: 50px; 
+    height: 50px; 
+} 
+
+.name {
+    text-shadow: 0px 0px 10px #FFFFFF;
+    color: chocolate;
+    font-size: 20px; 
+    margin-left: 0px; 
+    font-weight: bold; 
+    text-decoration: none !important; 
+}
+
+
+.navbar .menu-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 30px;
+}
+
+.navbar .menu-links li a {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.navbar .menu-links .language-item a {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.navbar .menu-links .language-item span {
+  font-size: 1.3rem;
+}
+
+.navbar .menu-links li a:hover {
+  color: brown;
+}
+
+.navbar .menu-links .join-btn a {
+  border: 1px solid #fff;
+  padding: 8px 15px;
+  border-radius: 4px;
+}
+
+.navbar .menu-links .join-btn a:hover {
+  color: #fff;
+  border-color: transparent;
+  background: brown;
+}

@@ -1,0 +1,127 @@
+/* Body background */
+body {
+    background-image: url('../image/photo-1497633762265-9d179a990aa6.avif');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+/* Heading styles */
+h2 {
+    color: white;
+    text-align: center;
+    font-family: cursive;
+}
+
+/* Form styles */
+form {
+    text-align:center;
+    max-width: 100%;/*var(--form-width, 90%); */
+    margin: 0 auto; 
+    background-color: #00000030; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+.form {
+    text-align:center;
+   /* max-width: 100%;*/ /*var(--form-width, 90%); */
+    /*margin: 0 auto; */
+    padding: 20px;
+    background-color: #00000030;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* Form group styles */
+.form-group {
+    display: inline-block !important;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    width:200px;
+}
+
+/* Label styles */
+label {
+    font-weight: bold;
+    color: white;
+}
+
+/* Input styles */
+.form-control {
+    
+    width: 200px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+.form-control-radio {
+    margin-right: 5px;
+    display: inline-block;
+    accent-color:#0079ff;
+}
+
+td, th{
+    padding:10px;
+    text-align:left;
+    color: white;
+}
+select option{
+    background: #bdbdbd;
+}
+/* Adjust width n Height for specific inputs */
+#districtInput{
+    width: 100%; 
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+.ratings {
+    width: calc(100% - 22px); 
+}
+
+/* Button styles */
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; 
+    margin: 0 auto;
+}
+
+/* Button hover styles */
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Search results styles */
+#searchResults {
+    position: absolute;
+    width: calc(100% - 2px);
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-top: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Result item styles */
+#searchResults div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Result item hover styles */
+#searchResults div:hover {
+    background-color: #f0f0f0;
+}

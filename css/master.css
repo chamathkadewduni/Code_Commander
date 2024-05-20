@@ -1,0 +1,31 @@
+/* Search results styles */
+.searchResults {
+    position: relative;
+    width: calc(100% - 2px);
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-top: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Result item styles */
+.searchResults div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Result item hover styles */
+.searchResults div:hover {
+    background-color: #f0f0f0;
+}
+.marginR20{
+    margin-right:20px;
+}
+.btn{
+    margin-right:20px;
+}
